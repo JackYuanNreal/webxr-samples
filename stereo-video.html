@@ -73,12 +73,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let gl = null;
       let renderer = null;
       let scene = new Scene();
-      scene.addNode(new Gltf2Node({url: 'media/gltf/home-theater/home-theater.gltf'}));
+      // scene.addNode(new Gltf2Node({url: 'media/gltf/home-theater/home-theater.gltf'}));
+      scene.addNode(new Gltf2Node({url: 'media/gltf/nreal-space/BackGround.gltf'}));
       scene.enableStats(false);
 
       let video = document.createElement('video');
       video.loop = true;
-      video.src = 'media/video/bbb-sunflower-540p2-1min.webm';
+      // video.src = 'media/video/bbb-sunflower-540p2-1min.webm';
+      video.src = 'media/video/VideoIcon.webm';
 
       let videoNode = new VideoNode({
         video: video,
@@ -129,7 +131,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       // bigger.
       playButton.translation = [0.025, 0.275, -4.2];
       playButton.scale = [5.0, 5.0, 5.0];
-      // scene.addNode(playButton);
+      scene.addNode(playButton);
 
       function initXR() {
         xrButton = new WebXRButton({
