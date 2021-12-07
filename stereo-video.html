@@ -40,7 +40,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           <a class="back" href="./">Back</a>
           <br/>
           <hr/>
-          Autoplay when VR starts: <input id='autoplayVideo' type='checkbox'/>
+          Autoplay when AR starts: <input id='autoplayVideo' type='checkbox'/>
         </p>
       </summary>
     </header>
@@ -139,7 +139,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         document.querySelector('header').appendChild(xrButton.domElement);
 
         if (navigator.xr) {
-          navigator.xr.isSessionSupported('immersive-vr').then((supported) => {
+          navigator.xr.isSessionSupported('immersive-ar').then((supported) => {
             xrButton.enabled = supported;
           });
 
@@ -185,7 +185,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           });
         }
 
-        return navigator.xr.requestSession('immersive-vr', {
+        return navigator.xr.requestSession('immersive-ar', {
             requiredFeatures: ['local-floor']
         }).then((session) => {
           xrButton.setSession(session);
